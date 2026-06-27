@@ -1,0 +1,328 @@
+[
+  {
+    "id": "curtain-blinds",
+    "name": "Curtain / Blinds Installation",
+    "nameZh": "窗簾 / 百葉窗安裝",
+    "emoji": "🪟",
+    "checklist": [
+      { "item": "drill", "zh": "電鑽" },
+      { "item": "ladder", "zh": "梯子" },
+      { "item": "screws", "zh": "螺絲" },
+      { "item": "anchors", "zh": "膨脹塞" },
+      { "item": "tape measure", "zh": "捲尺" },
+      { "item": "laser level", "zh": "雷射水平儀" },
+      { "item": "pencil", "zh": "鉛筆" },
+      { "item": "vacuum", "zh": "吸塵器" }
+    ],
+    "checklistSentences": [
+      { "id": "cb-cs1", "scenarioId": "curtain-blinds", "en": "I will measure the window first.", "zh": "我先量窗戶的尺寸。" },
+      { "id": "cb-cs2", "scenarioId": "curtain-blinds", "en": "The wall is concrete.", "zh": "這個牆是水泥牆。" },
+      { "id": "cb-cs3", "scenarioId": "curtain-blinds", "en": "I need to use wall plugs.", "zh": "我需要用壁虎塞。" }
+    ],
+    "vocabulary": [
+      { "id": "cb-001", "scenarioId": "curtain-blinds", "word": "anchor", "zh": "膨脹塞 / 壁虎", "context": "curtain installation", "example": "I need wall anchors for this concrete wall." },
+      { "id": "cb-002", "scenarioId": "curtain-blinds", "word": "bracket", "zh": "支架", "context": "curtain installation", "example": "Screw the bracket into the wall first." },
+      { "id": "cb-003", "scenarioId": "curtain-blinds", "word": "curtain rod", "zh": "窗簾桿", "context": "curtain installation", "example": "The curtain rod is too long for this window." },
+      { "id": "cb-004", "scenarioId": "curtain-blinds", "word": "blind", "zh": "百葉窗 / 捲簾", "context": "blinds installation", "example": "This blind needs to be cut to size." },
+      { "id": "cb-005", "scenarioId": "curtain-blinds", "word": "valance", "zh": "簾頭 / 窗簾盒", "context": "curtain installation", "example": "The valance covers the top of the curtain rail." },
+      { "id": "cb-006", "scenarioId": "curtain-blinds", "word": "track", "zh": "軌道", "context": "curtain installation", "example": "The curtain track needs to be level." },
+      { "id": "cb-007", "scenarioId": "curtain-blinds", "word": "level", "zh": "水平", "context": "checking work", "example": "Please check if the bracket is level." },
+      { "id": "cb-008", "scenarioId": "curtain-blinds", "word": "gyprock", "zh": "石膏板", "context": "wall type", "example": "This wall is gyprock, not concrete." },
+      { "id": "cb-009", "scenarioId": "curtain-blinds", "word": "drill bit", "zh": "鑽頭", "context": "tools", "example": "I need a smaller drill bit for this screw." },
+      { "id": "cb-010", "scenarioId": "curtain-blinds", "word": "measurement", "zh": "測量 / 尺寸", "context": "before installation", "example": "Let me double check the measurement before drilling." }
+    ],
+    "sentences": [
+      { "id": "cb-s1", "scenarioId": "curtain-blinds", "en": "I will measure the window first.", "zh": "我先量窗戶的尺寸。" },
+      { "id": "cb-s2", "scenarioId": "curtain-blinds", "en": "This wall is concrete, so I need to use anchors.", "zh": "這牆是水泥牆,我需要用膨脹塞。" },
+      { "id": "cb-s3", "scenarioId": "curtain-blinds", "en": "The bracket needs to be level.", "zh": "支架需要是水平的。" },
+      { "id": "cb-s4", "scenarioId": "curtain-blinds", "en": "How wide do you want the curtain to be?", "zh": "你想要窗簾多寬?" },
+      { "id": "cb-s5", "scenarioId": "curtain-blinds", "en": "I will clean up after the installation.", "zh": "安裝完後我會清理現場。" }
+    ],
+    "dialogue": {
+      "id": "cb-d1",
+      "scenarioId": "curtain-blinds",
+      "title": "Checking the bracket on site",
+      "lines": [
+        { "speaker": "customer", "en": "How long will it take to install the blinds?", "zhHint": "客戶問安裝要多久" },
+        { "speaker": "you", "en": "It usually takes about one hour per window.", "zhHint": "回答大概一個窗戶一小時" },
+        { "speaker": "customer", "en": "Can you also check the bracket on the left side? It feels loose.", "zhHint": "客戶要求檢查左邊的支架,感覺鬆了" },
+        { "speaker": "you", "en": "Sure, I will check it and tighten it if needed.", "zhHint": "回答好,會檢查並上緊" }
+      ]
+    },
+    "quiz": [
+      { "id": "cb-q1", "scenarioId": "curtain-blinds", "type": "mc", "question": "\"Anchor\" in this context means:", "options": ["螺絲刀", "膨脹塞", "窗簾桿"], "answer": "膨脹塞" },
+      { "id": "cb-q2", "scenarioId": "curtain-blinds", "type": "mc", "question": "The wall is ___, so I need anchors.", "options": ["concrete", "curtain", "bracket"], "answer": "concrete" },
+      { "id": "cb-q3", "scenarioId": "curtain-blinds", "type": "translate", "question": "翻譯成英文:支架需要是水平的。", "answer": "The bracket needs to be level." }
+    ]
+  },
+  {
+    "id": "moving",
+    "name": "Moving",
+    "nameZh": "搬家",
+    "emoji": "📦",
+    "checklist": [
+      { "item": "dolly / trolley", "zh": "手推車" },
+      { "item": "furniture pads", "zh": "家具保護墊" },
+      { "item": "moving boxes", "zh": "搬家紙箱" },
+      { "item": "packing tape", "zh": "打包膠帶" },
+      { "item": "bubble wrap", "zh": "氣泡膜" },
+      { "item": "straps", "zh": "綁帶" },
+      { "item": "gloves", "zh": "手套" },
+      { "item": "truck", "zh": "搬家貨車" }
+    ],
+    "checklistSentences": [
+      { "id": "mv-cs1", "scenarioId": "moving", "en": "I will wrap the furniture first.", "zh": "我會先包好家具。" },
+      { "id": "mv-cs2", "scenarioId": "moving", "en": "We need straps to secure this in the truck.", "zh": "我們需要綁帶把這個固定在車上。" },
+      { "id": "mv-cs3", "scenarioId": "moving", "en": "Please label each box.", "zh": "請標記每一個箱子。" }
+    ],
+    "vocabulary": [
+      { "id": "mv-001", "scenarioId": "moving", "word": "moving box", "zh": "搬家紙箱", "context": "packing", "example": "Please label each moving box." },
+      { "id": "mv-002", "scenarioId": "moving", "word": "furniture pad", "zh": "家具保護墊", "context": "protecting items", "example": "I will wrap the sofa with a furniture pad." },
+      { "id": "mv-003", "scenarioId": "moving", "word": "dolly", "zh": "手推車", "context": "moving heavy items", "example": "We will use a dolly for the fridge." },
+      { "id": "mv-004", "scenarioId": "moving", "word": "fragile", "zh": "易碎的", "context": "labelling boxes", "example": "This box is fragile, please be careful." },
+      { "id": "mv-005", "scenarioId": "moving", "word": "wrap", "zh": "包裝", "context": "packing", "example": "I will wrap the mirror in bubble wrap." },
+      { "id": "mv-006", "scenarioId": "moving", "word": "lift", "zh": "抬 / 搬", "context": "safety", "example": "Lift with your legs, not your back." },
+      { "id": "mv-007", "scenarioId": "moving", "word": "staircase", "zh": "樓梯", "context": "access", "example": "The staircase is narrow, we need to be careful." },
+      { "id": "mv-008", "scenarioId": "moving", "word": "truck", "zh": "搬家貨車", "context": "transport", "example": "I will park the truck near the entrance." },
+      { "id": "mv-009", "scenarioId": "moving", "word": "inventory", "zh": "清單", "context": "before moving", "example": "Let's go through the inventory before we start." },
+      { "id": "mv-010", "scenarioId": "moving", "word": "disassemble", "zh": "拆解", "context": "furniture", "example": "I need to disassemble the bed frame first." }
+    ],
+    "sentences": [
+      { "id": "mv-s1", "scenarioId": "moving", "en": "Where do you want this box?", "zh": "你想把這箱放哪裡?" },
+      { "id": "mv-s2", "scenarioId": "moving", "en": "I will wrap the furniture first.", "zh": "我會先包好家具。" },
+      { "id": "mv-s3", "scenarioId": "moving", "en": "Please be careful, this is fragile.", "zh": "請小心,這是易碎品。" },
+      { "id": "mv-s4", "scenarioId": "moving", "en": "We need two people to lift this.", "zh": "我們需要兩個人來抬這個。" },
+      { "id": "mv-s5", "scenarioId": "moving", "en": "Is there parking near the entrance?", "zh": "入口附近有停車位嗎?" }
+    ],
+    "dialogue": {
+      "id": "mv-d1",
+      "scenarioId": "moving",
+      "title": "Quoting an extra job on the day",
+      "lines": [
+        { "speaker": "customer", "en": "Can you move this wardrobe without disassembling it?", "zhHint": "客戶問可以不拆衣櫃就搬嗎" },
+        { "speaker": "you", "en": "Let me check the size first. If it doesn't fit through the door, I will need to disassemble it.", "zhHint": "回答先檢查尺寸,如果過不了門就要拆" },
+        { "speaker": "customer", "en": "Okay, how much extra will that cost?", "zhHint": "客戶問要多收多少錢" },
+        { "speaker": "you", "en": "It will be an extra $30 for disassembly and reassembly.", "zhHint": "回答拆裝多收30元" }
+      ]
+    },
+    "quiz": [
+      { "id": "mv-q1", "scenarioId": "moving", "type": "mc", "question": "\"Fragile\" means:", "options": ["重的", "易碎的", "大的"], "answer": "易碎的" },
+      { "id": "mv-q2", "scenarioId": "moving", "type": "mc", "question": "I will ___ the mirror in bubble wrap.", "options": ["lift", "wrap", "disassemble"], "answer": "wrap" },
+      { "id": "mv-q3", "scenarioId": "moving", "type": "translate", "question": "翻譯成英文:我們需要兩個人來抬這個。", "answer": "We need two people to lift this." }
+    ]
+  },
+  {
+    "id": "handyman-general",
+    "name": "Handyman General",
+    "nameZh": "水電雜工",
+    "emoji": "🛠️",
+    "checklist": [
+      { "item": "drill", "zh": "電鑽" },
+      { "item": "screwdriver set", "zh": "螺絲起子組" },
+      { "item": "level", "zh": "水平儀" },
+      { "item": "tape measure", "zh": "捲尺" },
+      { "item": "silicone gun", "zh": "矽利康膠槍" },
+      { "item": "ladder", "zh": "梯子" },
+      { "item": "multitool", "zh": "多功能工具" },
+      { "item": "safety glasses", "zh": "護目鏡" }
+    ],
+    "checklistSentences": [
+      { "id": "hg-cs1", "scenarioId": "handyman-general", "en": "I will check the issue first.", "zh": "我先檢查一下問題。" },
+      { "id": "hg-cs2", "scenarioId": "handyman-general", "en": "I need to find the studs before drilling.", "zh": "我需要先找到牆內骨架再鑽孔。" },
+      { "id": "hg-cs3", "scenarioId": "handyman-general", "en": "This will take about an hour.", "zh": "這大概會花一個小時。" }
+    ],
+    "vocabulary": [
+      { "id": "hg-001", "scenarioId": "handyman-general", "word": "tighten", "zh": "擰緊", "context": "repair", "example": "I need to tighten this screw." },
+      { "id": "hg-002", "scenarioId": "handyman-general", "word": "leak", "zh": "漏水", "context": "plumbing", "example": "There is a leak under the sink." },
+      { "id": "hg-003", "scenarioId": "handyman-general", "word": "hinge", "zh": "鉸鏈", "context": "doors", "example": "The door hinge is loose." },
+      { "id": "hg-004", "scenarioId": "handyman-general", "word": "caulking", "zh": "矽利康 / 填縫劑", "context": "bathroom repair", "example": "I will apply caulking around the bathtub." },
+      { "id": "hg-005", "scenarioId": "handyman-general", "word": "patch", "zh": "補洞 / 修補", "context": "wall repair", "example": "I can patch this hole in the wall." },
+      { "id": "hg-006", "scenarioId": "handyman-general", "word": "fixture", "zh": "固定裝置（燈具/水龍頭等）", "context": "repair", "example": "This light fixture needs to be replaced." },
+      { "id": "hg-007", "scenarioId": "handyman-general", "word": "silicone", "zh": "矽利康", "context": "sealing gaps", "example": "Use silicone to seal the gap." },
+      { "id": "hg-008", "scenarioId": "handyman-general", "word": "studs", "zh": "牆內骨架 / 龍骨", "context": "before drilling", "example": "I need to find the studs before drilling." },
+      { "id": "hg-009", "scenarioId": "handyman-general", "word": "sealant", "zh": "密封劑", "context": "windows", "example": "Apply sealant around the window frame." },
+      { "id": "hg-010", "scenarioId": "handyman-general", "word": "warranty", "zh": "保固", "context": "after the job", "example": "This repair comes with a 30-day warranty." }
+    ],
+    "sentences": [
+      { "id": "hg-s1", "scenarioId": "handyman-general", "en": "I will fix the leak under the sink.", "zh": "我會修好水槽下面的漏水。" },
+      { "id": "hg-s2", "scenarioId": "handyman-general", "en": "The door hinge needs replacing.", "zh": "門的鉸鏈需要更換。" },
+      { "id": "hg-s3", "scenarioId": "handyman-general", "en": "I can patch this hole today.", "zh": "我今天可以補好這個洞。" },
+      { "id": "hg-s4", "scenarioId": "handyman-general", "en": "Let me find the studs first.", "zh": "我先找一下牆內的骨架。" },
+      { "id": "hg-s5", "scenarioId": "handyman-general", "en": "This job comes with a 30-day warranty.", "zh": "這項工作有30天保固。" }
+    ],
+    "dialogue": {
+      "id": "hg-d1",
+      "scenarioId": "handyman-general",
+      "title": "A kitchen sink leak call",
+      "lines": [
+        { "speaker": "customer", "en": "There's a leak under my kitchen sink. Can you fix it today?", "zhHint": "客戶說廚房水槽下面漏水,問今天能不能修" },
+        { "speaker": "you", "en": "Yes, I can come this afternoon. Can you send me a photo first?", "zhHint": "回答可以今天下午到,先請對方傳照片" },
+        { "speaker": "customer", "en": "Sure, I'll send it now. How much will it cost?", "zhHint": "客戶說馬上傳照片,並問費用" },
+        { "speaker": "you", "en": "It depends on the cause, but it's usually around $120 to $180.", "zhHint": "回答視原因而定,通常120到180元" }
+      ]
+    },
+    "quiz": [
+      { "id": "hg-q1", "scenarioId": "handyman-general", "type": "mc", "question": "\"Leak\" means:", "options": ["漏水", "鉸鏈", "補洞"], "answer": "漏水" },
+      { "id": "hg-q2", "scenarioId": "handyman-general", "type": "mc", "question": "The door ___ is loose.", "options": ["hinge", "sealant", "warranty"], "answer": "hinge" },
+      { "id": "hg-q3", "scenarioId": "handyman-general", "type": "translate", "question": "翻譯成英文:我今天可以補好這個洞。", "answer": "I can patch this hole today." }
+    ]
+  },
+  {
+    "id": "customer-quote",
+    "name": "Customer Quote",
+    "nameZh": "客戶報價",
+    "emoji": "💬",
+    "checklist": [
+      { "item": "phone", "zh": "手機" },
+      { "item": "quote template", "zh": "報價範本" },
+      { "item": "notebook", "zh": "筆記本" },
+      { "item": "tape measure", "zh": "捲尺" },
+      { "item": "business card", "zh": "名片" }
+    ],
+    "checklistSentences": [
+      { "id": "cq-cs1", "scenarioId": "customer-quote", "en": "Let me take a quick measurement before I quote.", "zh": "報價前我先簡單量一下尺寸。" },
+      { "id": "cq-cs2", "scenarioId": "customer-quote", "en": "I will send you the quote by text.", "zh": "我會用短訊把報價發給你。" },
+      { "id": "cq-cs3", "scenarioId": "customer-quote", "en": "This price is just an estimate.", "zh": "這個價格只是估價。" }
+    ],
+    "vocabulary": [
+      { "id": "cq-001", "scenarioId": "customer-quote", "word": "quote", "zh": "報價", "context": "pricing", "example": "I will send you a quote tomorrow." },
+      { "id": "cq-002", "scenarioId": "customer-quote", "word": "deposit", "zh": "訂金", "context": "booking", "example": "I need a 20% deposit to book the job." },
+      { "id": "cq-003", "scenarioId": "customer-quote", "word": "invoice", "zh": "發票 / 帳單", "context": "after the job", "example": "I will email you the invoice after the job." },
+      { "id": "cq-004", "scenarioId": "customer-quote", "word": "estimate", "zh": "估價", "context": "pricing", "example": "This is just an estimate, the final price may vary." },
+      { "id": "cq-005", "scenarioId": "customer-quote", "word": "labour cost", "zh": "工資 / 人工費", "context": "pricing", "example": "The labour cost is $80 per hour." },
+      { "id": "cq-006", "scenarioId": "customer-quote", "word": "material", "zh": "材料", "context": "pricing", "example": "Material is not included in this quote." },
+      { "id": "cq-007", "scenarioId": "customer-quote", "word": "callout fee", "zh": "出車費", "context": "pricing", "example": "There is a $50 callout fee." },
+      { "id": "cq-008", "scenarioId": "customer-quote", "word": "availability", "zh": "可服務時間", "context": "scheduling", "example": "What is your availability this week?" },
+      { "id": "cq-009", "scenarioId": "customer-quote", "word": "confirm", "zh": "確認", "context": "scheduling", "example": "Can you confirm the appointment time?" },
+      { "id": "cq-010", "scenarioId": "customer-quote", "word": "balance", "zh": "餘額 / 尾款", "context": "payment", "example": "Please pay the balance after the job is done." }
+    ],
+    "sentences": [
+      { "id": "cq-s1", "scenarioId": "customer-quote", "en": "It will be around $250.", "zh": "大概會是250元。" },
+      { "id": "cq-s2", "scenarioId": "customer-quote", "en": "Material is not included.", "zh": "材料費不包含在內。" },
+      { "id": "cq-s3", "scenarioId": "customer-quote", "en": "I can come after 2 pm.", "zh": "我兩點後可以過去。" },
+      { "id": "cq-s4", "scenarioId": "customer-quote", "en": "I need a 20% deposit to confirm the booking.", "zh": "我需要20%訂金才能確認預約。" },
+      { "id": "cq-s5", "scenarioId": "customer-quote", "en": "I will send you the invoice by email.", "zh": "我會用email寄發票給你。" }
+    ],
+    "dialogue": {
+      "id": "cq-d1",
+      "scenarioId": "customer-quote",
+      "title": "Quoting a wardrobe assembly job",
+      "lines": [
+        { "speaker": "customer", "en": "How much will it cost to assemble this wardrobe?", "zhHint": "客戶問組裝衣櫃要多少錢" },
+        { "speaker": "you", "en": "It will be around $150, including labour. Material is not included.", "zhHint": "回答大概150元,含工資,不含材料" },
+        { "speaker": "customer", "en": "Can you come tomorrow morning?", "zhHint": "客戶問明天早上可以來嗎" },
+        { "speaker": "you", "en": "Yes, I am available tomorrow morning. I will confirm the exact time tonight.", "zhHint": "回答明天早上可以,今晚會確認確切時間" }
+      ]
+    },
+    "quiz": [
+      { "id": "cq-q1", "scenarioId": "customer-quote", "type": "mc", "question": "\"Deposit\" means:", "options": ["尾款", "訂金", "發票"], "answer": "訂金" },
+      { "id": "cq-q2", "scenarioId": "customer-quote", "type": "mc", "question": "___ is not included in this quote.", "options": ["Material", "Deposit", "Invoice"], "answer": "Material" },
+      { "id": "cq-q3", "scenarioId": "customer-quote", "type": "translate", "question": "翻譯成英文:我兩點後可以過去。", "answer": "I can come after 2 pm." }
+    ]
+  },
+  {
+    "id": "gym",
+    "name": "Gym",
+    "nameZh": "健身",
+    "emoji": "💪",
+    "checklist": [
+      { "item": "gym bag", "zh": "健身包" },
+      { "item": "water bottle", "zh": "水壺" },
+      { "item": "towel", "zh": "毛巾" },
+      { "item": "lifting belt", "zh": "腰帶" },
+      { "item": "protein shake", "zh": "乳清蛋白飲" }
+    ],
+    "checklistSentences": [
+      { "id": "gy-cs1", "scenarioId": "gym", "en": "I always warm up before lifting.", "zh": "我每次練重量前都會先熱身。" },
+      { "id": "gy-cs2", "scenarioId": "gym", "en": "Today is leg day.", "zh": "今天是練腿日。" },
+      { "id": "gy-cs3", "scenarioId": "gym", "en": "I will track my reps and sets.", "zh": "我會記錄我的次數和組數。" }
+    ],
+    "vocabulary": [
+      { "id": "gy-001", "scenarioId": "gym", "word": "set", "zh": "組", "context": "training", "example": "I did three sets of squats." },
+      { "id": "gy-002", "scenarioId": "gym", "word": "rep", "zh": "次數", "context": "training", "example": "Try to do 12 reps per set." },
+      { "id": "gy-003", "scenarioId": "gym", "word": "warm up", "zh": "熱身", "context": "before training", "example": "I always warm up before lifting." },
+      { "id": "gy-004", "scenarioId": "gym", "word": "spotter", "zh": "保護者", "context": "heavy lifting", "example": "Can you be my spotter for this set?" },
+      { "id": "gy-005", "scenarioId": "gym", "word": "deadlift", "zh": "硬舉", "context": "training", "example": "My deadlift max is 140kg." },
+      { "id": "gy-006", "scenarioId": "gym", "word": "cardio", "zh": "有氧運動", "context": "training", "example": "I do cardio twice a week." },
+      { "id": "gy-007", "scenarioId": "gym", "word": "rest day", "zh": "休息日", "context": "recovery", "example": "Today is my rest day." },
+      { "id": "gy-008", "scenarioId": "gym", "word": "protein", "zh": "蛋白質", "context": "diet", "example": "I need more protein in my diet." },
+      { "id": "gy-009", "scenarioId": "gym", "word": "personal record", "zh": "個人最佳紀錄 (PR)", "context": "training", "example": "I hit a new PR on bench press today." },
+      { "id": "gy-010", "scenarioId": "gym", "word": "form", "zh": "動作姿勢", "context": "technique", "example": "Focus on your form, not the weight." }
+    ],
+    "sentences": [
+      { "id": "gy-s1", "scenarioId": "gym", "en": "I usually train four times a week.", "zh": "我通常一週訓練四次。" },
+      { "id": "gy-s2", "scenarioId": "gym", "en": "Can you spot me for this set?", "zh": "你可以幫我保護這一組嗎?" },
+      { "id": "gy-s3", "scenarioId": "gym", "en": "I need to work on my form.", "zh": "我需要改善我的動作姿勢。" },
+      { "id": "gy-s4", "scenarioId": "gym", "en": "Today I hit a new personal record.", "zh": "我今天破了個人紀錄。" },
+      { "id": "gy-s5", "scenarioId": "gym", "en": "Let's warm up first before the heavy sets.", "zh": "我們先熱身再做重的那組。" }
+    ],
+    "dialogue": {
+      "id": "gy-d1",
+      "scenarioId": "gym",
+      "title": "Talking deadlifts with a gym friend",
+      "lines": [
+        { "speaker": "friend", "en": "How much can you deadlift now?", "zhHint": "朋友問你現在硬舉能舉多重" },
+        { "speaker": "you", "en": "My current max is 140kg. I'm trying to hit 150kg by next month.", "zhHint": "回答目前最重140公斤,目標下個月150公斤" },
+        { "speaker": "friend", "en": "That's impressive. Do you train every day?", "zhHint": "朋友稱讚並問是不是每天練" },
+        { "speaker": "you", "en": "No, I train four days a week and rest on the other days.", "zhHint": "回答不是,一週練四天,其他天休息" }
+      ]
+    },
+    "quiz": [
+      { "id": "gy-q1", "scenarioId": "gym", "type": "mc", "question": "\"Rep\" means:", "options": ["組", "次數", "休息日"], "answer": "次數" },
+      { "id": "gy-q2", "scenarioId": "gym", "type": "mc", "question": "Today is my ___ day.", "options": ["rest", "form", "cardio"], "answer": "rest" },
+      { "id": "gy-q3", "scenarioId": "gym", "type": "translate", "question": "翻譯成英文:你可以幫我保護這一組嗎?", "answer": "Can you spot me for this set?" }
+    ]
+  },
+  {
+    "id": "ai-project",
+    "name": "AI Project",
+    "nameZh": "AI 專案",
+    "emoji": "🤖",
+    "checklist": [
+      { "item": "laptop", "zh": "筆電" },
+      { "item": "charger", "zh": "充電器" },
+      { "item": "notebook", "zh": "筆記本" },
+      { "item": "API docs", "zh": "API 文件" }
+    ],
+    "checklistSentences": [
+      { "id": "ai-cs1", "scenarioId": "ai-project", "en": "I will test this feature before deploying.", "zh": "我部署前會先測試這個功能。" },
+      { "id": "ai-cs2", "scenarioId": "ai-project", "en": "Let me check the logs for errors.", "zh": "我來檢查一下記錄裡有沒有錯誤。" },
+      { "id": "ai-cs3", "scenarioId": "ai-project", "en": "This workflow saves me a lot of time.", "zh": "這個工作流程幫我省了很多時間。" }
+    ],
+    "vocabulary": [
+      { "id": "ai-001", "scenarioId": "ai-project", "word": "prompt", "zh": "提示詞", "context": "AI tools", "example": "I need to improve my prompt for better results." },
+      { "id": "ai-002", "scenarioId": "ai-project", "word": "automation", "zh": "自動化", "context": "workflow", "example": "This workflow automation saves me two hours a day." },
+      { "id": "ai-003", "scenarioId": "ai-project", "word": "workflow", "zh": "工作流程", "context": "business process", "example": "I built a workflow to handle customer quotes automatically." },
+      { "id": "ai-004", "scenarioId": "ai-project", "word": "API", "zh": "應用程式介面", "context": "integration", "example": "I connected my app to the OpenAI API." },
+      { "id": "ai-005", "scenarioId": "ai-project", "word": "deploy", "zh": "部署", "context": "release", "example": "I will deploy this app to a live server." },
+      { "id": "ai-006", "scenarioId": "ai-project", "word": "database", "zh": "資料庫", "context": "data storage", "example": "The customer data is stored in a database." },
+      { "id": "ai-007", "scenarioId": "ai-project", "word": "integration", "zh": "整合", "context": "connecting systems", "example": "I am working on the integration between two apps." },
+      { "id": "ai-008", "scenarioId": "ai-project", "word": "bug", "zh": "程式錯誤", "context": "debugging", "example": "I found a bug in the booking form." },
+      { "id": "ai-009", "scenarioId": "ai-project", "word": "feature", "zh": "功能", "context": "product", "example": "This new feature lets users upload photos." },
+      { "id": "ai-010", "scenarioId": "ai-project", "word": "iteration", "zh": "迭代 / 修改版本", "context": "design process", "example": "This is the third iteration of the design." }
+    ],
+    "sentences": [
+      { "id": "ai-s1", "scenarioId": "ai-project", "en": "I am building an automation for customer quotes.", "zh": "我正在建立一個客戶報價的自動化系統。" },
+      { "id": "ai-s2", "scenarioId": "ai-project", "en": "This bug is affecting the booking form.", "zh": "這個程式錯誤影響到了預約表單。" },
+      { "id": "ai-s3", "scenarioId": "ai-project", "en": "I need to deploy this update today.", "zh": "我今天需要部署這次更新。" },
+      { "id": "ai-s4", "scenarioId": "ai-project", "en": "Can you explain how this workflow works?", "zh": "你可以解釋一下這個工作流程怎麼運作嗎?" },
+      { "id": "ai-s5", "scenarioId": "ai-project", "en": "I am testing a new feature this week.", "zh": "我這週在測試一個新功能。" }
+    ],
+    "dialogue": {
+      "id": "ai-d1",
+      "scenarioId": "ai-project",
+      "title": "Updating a colleague on the project",
+      "lines": [
+        { "speaker": "colleague", "en": "How is your AI automation project going?", "zhHint": "同事問AI自動化專案進度如何" },
+        { "speaker": "you", "en": "It's going well. I just finished the integration with the booking system.", "zhHint": "回答進展順利,剛完成跟預約系統的整合" },
+        { "speaker": "colleague", "en": "Did you run into any issues?", "zhHint": "同事問有沒有遇到問題" },
+        { "speaker": "you", "en": "Yes, there was a bug in the API connection, but I fixed it yesterday.", "zhHint": "回答有,API連接有個錯誤,但昨天已修好" }
+      ]
+    },
+    "quiz": [
+      { "id": "ai-q1", "scenarioId": "ai-project", "type": "mc", "question": "\"Automation\" means:", "options": ["自動化", "資料庫", "部署"], "answer": "自動化" },
+      { "id": "ai-q2", "scenarioId": "ai-project", "type": "mc", "question": "I found a ___ in the booking form.", "options": ["feature", "bug", "workflow"], "answer": "bug" },
+      { "id": "ai-q3", "scenarioId": "ai-project", "type": "translate", "question": "翻譯成英文:我今天需要部署這次更新。", "answer": "I need to deploy this update today." }
+    ]
+  }
+]

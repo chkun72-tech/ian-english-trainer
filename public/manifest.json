@@ -1,0 +1,25 @@
+{
+  "name": "Ian English Trainer",
+  "short_name": "IanEnglish",
+  "description": "個人化英文學習 App - Handyman / Moving / 客戶溝通 / 健身 / AI 專案英文",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FAFAF7",
+  "theme_color": "#E0631E",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
