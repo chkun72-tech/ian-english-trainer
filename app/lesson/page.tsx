@@ -18,6 +18,7 @@ import VocabCard from "@/components/VocabCard";
 import DialogueView from "@/components/DialogueView";
 import QuizView from "@/components/QuizView";
 import ChecklistView from "@/components/ChecklistView";
+import SpeechTools from "@/components/SpeechTools";
 
 type Tab = "vocab" | "sentences" | "dialogue" | "quiz" | "checklist";
 
@@ -153,6 +154,7 @@ export default function LessonPage() {
             <div key={s.id} className="card">
               <p className="font-semibold">{s.en}</p>
               <p className="text-sm text-ink/50 mt-1">{s.zh}</p>
+              <SpeechTools text={s.en} />
             </div>
           ))}
           {!stepsDone.sentencesDone ? (

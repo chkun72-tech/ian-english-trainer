@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { phraseCategories } from "@/lib/data";
+import SpeechTools from "@/components/SpeechTools";
 
 export default function PhrasesPage() {
   const [activeId, setActiveId] = useState(phraseCategories[0].id);
@@ -33,6 +34,7 @@ export default function PhrasesPage() {
           <div key={p.id} className="card">
             <p className="font-semibold">{p.en}</p>
             <p className="text-sm text-ink/50 mt-1">{p.zh}</p>
+            <SpeechTools text={p.en} />
           </div>
         ))}
       </div>

@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { scenarios, phraseCategories } from "@/lib/data";
 import { Shuffle } from "lucide-react";
+import SpeechTools from "@/components/SpeechTools";
 
 interface PracticeItem {
   id: string;
@@ -35,16 +36,13 @@ export default function PracticePage() {
     setCurrent(p[Math.floor(Math.random() * p.length)]);
   }, []);
 
-  const nextQuestion = useCallback(
-    (currentPool: PracticeItem[]) => {
-      if (currentPool.length === 0) return;
-      const next = currentPool[Math.floor(Math.random() * currentPool.length)];
-      setCurrent(next);
-      setUserAnswer("");
-      setRevealed(false);
-    },
-    []
-  );
+  const nextQuestion = useCallback((currentPool: PracticeItem[]) => {
+    if (currentPool.length === 0) return;
+    const next = currentPool[Math.floor(Math.random() * currentPool.length)];
+    setCurrent(next);
+    setUserAnswer("");
+    setRevealed(false);
+  }, []);
 
   if (!current) return null;
 
@@ -79,6 +77,7 @@ export default function PracticePage() {
         <div className="bg-teal-light rounded-xl p-4">
           <p className="text-xs text-teal/70 font-semibold mb-1">參考答案</p>
           <p className="text-teal font-semibold text-lg">{current.en}</p>
+          <SpeechTools text={current.en} />
         </div>
       )}
 
