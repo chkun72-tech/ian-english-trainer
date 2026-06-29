@@ -64,10 +64,12 @@ interface SpeechRecognitionEvent {
 
 export default function SpeechTools({
   text,
+  meaning,
   compact = false,
   inverted = false,
 }: {
   text: string;
+  meaning?: string;
   compact?: boolean;
   inverted?: boolean;
 }) {
@@ -144,6 +146,7 @@ export default function SpeechTools({
 
   return (
     <div className={compact ? "mt-2" : "mt-3"}>
+      {meaning && <p className={`mb-2 text-xs ${mutedText}`}>中文：{meaning}</p>}
       <div className="flex flex-wrap gap-2">
         <button
           type="button"

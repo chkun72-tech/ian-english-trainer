@@ -37,7 +37,7 @@ export default function DialogueView({ dialogue }: { dialogue: Dialogue }) {
               {isOpen ? (
                 <>
                   <p className="text-sm leading-snug">{line.en}</p>
-                  <SpeechTools text={line.en} compact inverted={isYou} />
+                  <SpeechTools text={line.en} meaning={line.zhHint} compact inverted={isYou} />
                 </>
               ) : (
                 <button onClick={() => toggle(i)} className="text-sm leading-snug underline">

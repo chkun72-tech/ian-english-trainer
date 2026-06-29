@@ -24,7 +24,7 @@ export default function VocabCard({
       </div>
       <p className="text-xs text-ink/40 mt-2">場景：{word.context}</p>
       <p className="text-sm text-ink/80 mt-1 italic">&ldquo;{word.example}&rdquo;</p>
-      <SpeechTools text={word.word} compact />
+      <SpeechTools text={word.word} meaning={word.zh} compact />
       <SpeechTools text={word.example} compact />
     </div>
   );

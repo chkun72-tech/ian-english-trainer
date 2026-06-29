@@ -1,15 +1,106 @@
 [
   {
+    "id": "basic-speaking",
+    "name": "Basic Speaking",
+    "nameZh": "????",
+    "phrases": [
+      {
+        "id": "ph-bs1",
+        "en": "Sorry, I do not understand.",
+        "zh": "??????????"
+      },
+      {
+        "id": "ph-bs2",
+        "en": "Could you say that again?",
+        "zh": "?????????"
+      },
+      {
+        "id": "ph-bs3",
+        "en": "Could you speak slowly?",
+        "zh": "?????????"
+      },
+      {
+        "id": "ph-bs4",
+        "en": "What does this word mean?",
+        "zh": "??????????"
+      },
+      {
+        "id": "ph-bs5",
+        "en": "How do you say this in English?",
+        "zh": "????????"
+      },
+      {
+        "id": "ph-bs6",
+        "en": "I am still learning English.",
+        "zh": "???????"
+      },
+      {
+        "id": "ph-bs7",
+        "en": "Let me try again.",
+        "zh": "???????"
+      },
+      {
+        "id": "ph-bs8",
+        "en": "I mean this one.",
+        "zh": "?????????"
+      },
+      {
+        "id": "ph-bs9",
+        "en": "Is this correct?",
+        "zh": "?????"
+      },
+      {
+        "id": "ph-bs10",
+        "en": "Please correct my pronunciation.",
+        "zh": "????????"
+      },
+      {
+        "id": "ph-bs11",
+        "en": "Can you give me an example?",
+        "zh": "???????????"
+      },
+      {
+        "id": "ph-bs12",
+        "en": "I need more practice with this sentence.",
+        "zh": "??????????"
+      }
+    ]
+  },
+  {
     "id": "quote",
     "name": "Quote",
     "nameZh": "報價",
     "phrases": [
-      { "id": "ph-q1", "en": "It will be around $___.", "zh": "大概會是___元。" },
-      { "id": "ph-q2", "en": "Material is not included.", "zh": "材料費不包含在內。" },
-      { "id": "ph-q3", "en": "The price includes labour only.", "zh": "這個價格只含工資。" },
-      { "id": "ph-q4", "en": "There is a $50 callout fee.", "zh": "有50元的出車費。" },
-      { "id": "ph-q5", "en": "I need a 20% deposit to book the job.", "zh": "我需要20%訂金才能預約。" },
-      { "id": "ph-q6", "en": "This is just an estimate, the final price may vary.", "zh": "這只是估價,最終價格可能會有變動。" }
+      {
+        "id": "ph-q1",
+        "en": "It will be around $___.",
+        "zh": "大概會是___元。"
+      },
+      {
+        "id": "ph-q2",
+        "en": "Material is not included.",
+        "zh": "材料費不包含在內。"
+      },
+      {
+        "id": "ph-q3",
+        "en": "The price includes labour only.",
+        "zh": "這個價格只含工資。"
+      },
+      {
+        "id": "ph-q4",
+        "en": "There is a $50 callout fee.",
+        "zh": "有50元的出車費。"
+      },
+      {
+        "id": "ph-q5",
+        "en": "I need a 20% deposit to book the job.",
+        "zh": "我需要20%訂金才能預約。"
+      },
+      {
+        "id": "ph-q6",
+        "en": "This is just an estimate, the final price may vary.",
+        "zh": "這只是估價,最終價格可能會有變動。"
+      }
     ]
   },
   {
@@ -17,12 +108,36 @@
     "name": "Time",
     "nameZh": "時間",
     "phrases": [
-      { "id": "ph-t1", "en": "I am available tomorrow morning.", "zh": "我明天早上有空。" },
-      { "id": "ph-t2", "en": "I can arrive around 2 pm.", "zh": "我大概兩點會到。" },
-      { "id": "ph-t3", "en": "I can come after ___ pm.", "zh": "我___點後可以過去。" },
-      { "id": "ph-t4", "en": "Can we reschedule to Friday?", "zh": "我們可以改到星期五嗎?" },
-      { "id": "ph-t5", "en": "I will be there in 30 minutes.", "zh": "我30分鐘內會到。" },
-      { "id": "ph-t6", "en": "What time works best for you?", "zh": "你什麼時間比較方便?" }
+      {
+        "id": "ph-t1",
+        "en": "I am available tomorrow morning.",
+        "zh": "我明天早上有空。"
+      },
+      {
+        "id": "ph-t2",
+        "en": "I can arrive around 2 pm.",
+        "zh": "我大概兩點會到。"
+      },
+      {
+        "id": "ph-t3",
+        "en": "I can come after ___ pm.",
+        "zh": "我___點後可以過去。"
+      },
+      {
+        "id": "ph-t4",
+        "en": "Can we reschedule to Friday?",
+        "zh": "我們可以改到星期五嗎?"
+      },
+      {
+        "id": "ph-t5",
+        "en": "I will be there in 30 minutes.",
+        "zh": "我30分鐘內會到。"
+      },
+      {
+        "id": "ph-t6",
+        "en": "What time works best for you?",
+        "zh": "你什麼時間比較方便?"
+      }
     ]
   },
   {
@@ -30,11 +145,31 @@
     "name": "On-site",
     "nameZh": "現場",
     "phrases": [
-      { "id": "ph-o1", "en": "Could you show me where you want it?", "zh": "可以給我看一下你想放哪裡嗎?" },
-      { "id": "ph-o2", "en": "I will check the wall first.", "zh": "我會先檢查一下牆面。" },
-      { "id": "ph-o3", "en": "This wall is gyprock / brick / concrete.", "zh": "這個牆是石膏板 / 磚牆 / 水泥牆。" },
-      { "id": "ph-o4", "en": "Is there power near this area?", "zh": "這附近有電源嗎?" },
-      { "id": "ph-o5", "en": "I will clean up before I leave.", "zh": "我離開前會清理乾淨。" }
+      {
+        "id": "ph-o1",
+        "en": "Could you show me where you want it?",
+        "zh": "可以給我看一下你想放哪裡嗎?"
+      },
+      {
+        "id": "ph-o2",
+        "en": "I will check the wall first.",
+        "zh": "我會先檢查一下牆面。"
+      },
+      {
+        "id": "ph-o3",
+        "en": "This wall is gyprock / brick / concrete.",
+        "zh": "這個牆是石膏板 / 磚牆 / 水泥牆。"
+      },
+      {
+        "id": "ph-o4",
+        "en": "Is there power near this area?",
+        "zh": "這附近有電源嗎?"
+      },
+      {
+        "id": "ph-o5",
+        "en": "I will clean up before I leave.",
+        "zh": "我離開前會清理乾淨。"
+      }
     ]
   },
   {
@@ -42,11 +177,31 @@
     "name": "Payment",
     "nameZh": "收款",
     "phrases": [
-      { "id": "ph-p1", "en": "Cash or bank transfer is fine.", "zh": "現金或銀行轉帳都可以。" },
-      { "id": "ph-p2", "en": "I will send you the invoice by email.", "zh": "我會用email把發票寄給你。" },
-      { "id": "ph-p3", "en": "Could you confirm once the payment is sent?", "zh": "付款後可以跟我確認一下嗎?" },
-      { "id": "ph-p4", "en": "The total is $___, including GST.", "zh": "總共是___元,含稅。" },
-      { "id": "ph-p5", "en": "Please pay the balance after the job is done.", "zh": "完工後請支付尾款。" }
+      {
+        "id": "ph-p1",
+        "en": "Cash or bank transfer is fine.",
+        "zh": "現金或銀行轉帳都可以。"
+      },
+      {
+        "id": "ph-p2",
+        "en": "I will send you the invoice by email.",
+        "zh": "我會用email把發票寄給你。"
+      },
+      {
+        "id": "ph-p3",
+        "en": "Could you confirm once the payment is sent?",
+        "zh": "付款後可以跟我確認一下嗎?"
+      },
+      {
+        "id": "ph-p4",
+        "en": "The total is $___, including GST.",
+        "zh": "總共是___元,含稅。"
+      },
+      {
+        "id": "ph-p5",
+        "en": "Please pay the balance after the job is done.",
+        "zh": "完工後請支付尾款。"
+      }
     ]
   },
   {
@@ -54,9 +209,21 @@
     "name": "Google Review",
     "nameZh": "Review",
     "phrases": [
-      { "id": "ph-r1", "en": "If you are happy with the job, could you please leave me a Google review?", "zh": "如果你滿意這次的服務,可以幫我留個Google評論嗎?" },
-      { "id": "ph-r2", "en": "Thank you so much, it really helps my small business.", "zh": "非常感謝,這對我的小生意真的很有幫助。" },
-      { "id": "ph-r3", "en": "I will send you the review link now.", "zh": "我現在把評論連結傳給你。" }
+      {
+        "id": "ph-r1",
+        "en": "If you are happy with the job, could you please leave me a Google review?",
+        "zh": "如果你滿意這次的服務,可以幫我留個Google評論嗎?"
+      },
+      {
+        "id": "ph-r2",
+        "en": "Thank you so much, it really helps my small business.",
+        "zh": "非常感謝,這對我的小生意真的很有幫助。"
+      },
+      {
+        "id": "ph-r3",
+        "en": "I will send you the review link now.",
+        "zh": "我現在把評論連結傳給你。"
+      }
     ]
   },
   {
@@ -64,11 +231,31 @@
     "name": "Gym",
     "nameZh": "健身英文",
     "phrases": [
-      { "id": "ph-g1", "en": "I usually train four times a week.", "zh": "我通常一週訓練四次。" },
-      { "id": "ph-g2", "en": "Can you spot me for this set?", "zh": "你可以幫我保護這一組嗎?" },
-      { "id": "ph-g3", "en": "I need to work on my form.", "zh": "我需要改善我的動作姿勢。" },
-      { "id": "ph-g4", "en": "Let's warm up first.", "zh": "我們先熱身一下。" },
-      { "id": "ph-g5", "en": "I hit a new personal record today.", "zh": "我今天破了個人紀錄。" }
+      {
+        "id": "ph-g1",
+        "en": "I usually train four times a week.",
+        "zh": "我通常一週訓練四次。"
+      },
+      {
+        "id": "ph-g2",
+        "en": "Can you spot me for this set?",
+        "zh": "你可以幫我保護這一組嗎?"
+      },
+      {
+        "id": "ph-g3",
+        "en": "I need to work on my form.",
+        "zh": "我需要改善我的動作姿勢。"
+      },
+      {
+        "id": "ph-g4",
+        "en": "Let's warm up first.",
+        "zh": "我們先熱身一下。"
+      },
+      {
+        "id": "ph-g5",
+        "en": "I hit a new personal record today.",
+        "zh": "我今天破了個人紀錄。"
+      }
     ]
   },
   {
@@ -76,10 +263,26 @@
     "name": "AI Project",
     "nameZh": "AI 英文",
     "phrases": [
-      { "id": "ph-a1", "en": "I am building an automation for customer quotes.", "zh": "我正在建立一個客戶報價的自動化系統。" },
-      { "id": "ph-a2", "en": "This bug is affecting the booking form.", "zh": "這個程式錯誤影響到了預約表單。" },
-      { "id": "ph-a3", "en": "I need to deploy this update today.", "zh": "我今天需要部署這次更新。" },
-      { "id": "ph-a4", "en": "I am testing a new feature this week.", "zh": "我這週在測試一個新功能。" }
+      {
+        "id": "ph-a1",
+        "en": "I am building an automation for customer quotes.",
+        "zh": "我正在建立一個客戶報價的自動化系統。"
+      },
+      {
+        "id": "ph-a2",
+        "en": "This bug is affecting the booking form.",
+        "zh": "這個程式錯誤影響到了預約表單。"
+      },
+      {
+        "id": "ph-a3",
+        "en": "I need to deploy this update today.",
+        "zh": "我今天需要部署這次更新。"
+      },
+      {
+        "id": "ph-a4",
+        "en": "I am testing a new feature this week.",
+        "zh": "我這週在測試一個新功能。"
+      }
     ]
   }
 ]

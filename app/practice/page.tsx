@@ -77,7 +77,7 @@ export default function PracticePage() {
         <div className="bg-teal-light rounded-xl p-4">
           <p className="text-xs text-teal/70 font-semibold mb-1">參考答案</p>
           <p className="text-teal font-semibold text-lg">{current.en}</p>
-          <SpeechTools text={current.en} />
+          <SpeechTools text={current.en} meaning={current.zh} />
         </div>
       )}
 

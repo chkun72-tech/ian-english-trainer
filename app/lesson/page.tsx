@@ -154,7 +154,7 @@ export default function LessonPage() {
             <div key={s.id} className="card">
               <p className="font-semibold">{s.en}</p>
               <p className="text-sm text-ink/50 mt-1">{s.zh}</p>
-              <SpeechTools text={s.en} />
+              <SpeechTools text={s.en} meaning={s.zh} />
             </div>
           ))}
           {!stepsDone.sentencesDone ? (

@@ -34,7 +34,7 @@ export default function PhrasesPage() {
           <div key={p.id} className="card">
             <p className="font-semibold">{p.en}</p>
             <p className="text-sm text-ink/50 mt-1">{p.zh}</p>
-            <SpeechTools text={p.en} />
+            <SpeechTools text={p.en} meaning={p.zh} />
           </div>
         ))}
       </div>
