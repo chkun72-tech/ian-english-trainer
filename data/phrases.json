@@ -2,67 +2,67 @@
   {
     "id": "basic-speaking",
     "name": "Basic Speaking",
-    "nameZh": "????",
+    "nameZh": "基礎口說",
     "phrases": [
       {
         "id": "ph-bs1",
         "en": "Sorry, I do not understand.",
-        "zh": "??????????"
+        "zh": "不好意思，我不太懂。"
       },
       {
         "id": "ph-bs2",
         "en": "Could you say that again?",
-        "zh": "?????????"
+        "zh": "你可以再說一次嗎？"
       },
       {
         "id": "ph-bs3",
         "en": "Could you speak slowly?",
-        "zh": "?????????"
+        "zh": "你可以說慢一點嗎？"
       },
       {
         "id": "ph-bs4",
         "en": "What does this word mean?",
-        "zh": "??????????"
+        "zh": "這個單字是什麼意思？"
       },
       {
         "id": "ph-bs5",
         "en": "How do you say this in English?",
-        "zh": "????????"
+        "zh": "這個英文怎麼說？"
       },
       {
         "id": "ph-bs6",
         "en": "I am still learning English.",
-        "zh": "???????"
+        "zh": "我還在學英文。"
       },
       {
         "id": "ph-bs7",
         "en": "Let me try again.",
-        "zh": "???????"
+        "zh": "讓我再試一次。"
       },
       {
         "id": "ph-bs8",
         "en": "I mean this one.",
-        "zh": "?????????"
+        "zh": "我的意思是這一個。"
       },
       {
         "id": "ph-bs9",
         "en": "Is this correct?",
-        "zh": "?????"
+        "zh": "這樣對嗎？"
       },
       {
         "id": "ph-bs10",
         "en": "Please correct my pronunciation.",
-        "zh": "????????"
+        "zh": "請糾正我的發音。"
       },
       {
         "id": "ph-bs11",
         "en": "Can you give me an example?",
-        "zh": "???????????"
+        "zh": "你可以給我一個例子嗎？"
       },
       {
         "id": "ph-bs12",
         "en": "I need more practice with this sentence.",
-        "zh": "??????????"
+        "zh": "這句話我需要多練習。"
       }
     ]
   },
