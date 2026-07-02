@@ -324,5 +324,297 @@
       { "id": "ai-q2", "scenarioId": "ai-project", "type": "mc", "question": "I found a ___ in the booking form.", "options": ["feature", "bug", "workflow"], "answer": "bug" },
       { "id": "ai-q3", "scenarioId": "ai-project", "type": "translate", "question": "翻譯成英文:我今天需要部署這次更新。", "answer": "I need to deploy this update today." }
     ]
+  },
+  {
+    "id": "daily-life-errands",
+    "name": "Daily Life / Everyday Errands",
+    "nameZh": "日常生活 / 辦事",
+    "emoji": "🧭",
+    "checklist": [
+      {
+        "item": "phone",
+        "zh": "手機"
+      },
+      {
+        "item": "wallet",
+        "zh": "錢包"
+      },
+      {
+        "item": "keys",
+        "zh": "鑰匙"
+      },
+      {
+        "item": "address",
+        "zh": "地址"
+      },
+      {
+        "item": "card",
+        "zh": "卡片"
+      },
+      {
+        "item": "receipt",
+        "zh": "收據"
+      },
+      {
+        "item": "shopping list",
+        "zh": "購物清單"
+      },
+      {
+        "item": "appointment time",
+        "zh": "預約時間"
+      }
+    ],
+    "checklistSentences": [
+      {
+        "id": "dl-cs1",
+        "scenarioId": "daily-life-errands",
+        "en": "I need to check the address first.",
+        "zh": "我需要先確認地址。"
+      },
+      {
+        "id": "dl-cs2",
+        "scenarioId": "daily-life-errands",
+        "en": "I will bring my wallet and keys.",
+        "zh": "我會帶錢包和鑰匙。"
+      },
+      {
+        "id": "dl-cs3",
+        "scenarioId": "daily-life-errands",
+        "en": "Please send me the appointment time.",
+        "zh": "請把預約時間傳給我。"
+      }
+    ],
+    "vocabulary": [
+      {
+        "id": "dl-001",
+        "scenarioId": "daily-life-errands",
+        "word": "appointment",
+        "zh": "預約",
+        "context": "daily schedule",
+        "example": "I have an appointment at 3 pm."
+      },
+      {
+        "id": "dl-002",
+        "scenarioId": "daily-life-errands",
+        "word": "address",
+        "zh": "地址",
+        "context": "going somewhere",
+        "example": "Can you send me the address?"
+      },
+      {
+        "id": "dl-003",
+        "scenarioId": "daily-life-errands",
+        "word": "receipt",
+        "zh": "收據",
+        "context": "shopping",
+        "example": "Can I get a receipt, please?"
+      },
+      {
+        "id": "dl-004",
+        "scenarioId": "daily-life-errands",
+        "word": "refund",
+        "zh": "退款",
+        "context": "shopping problem",
+        "example": "Can I get a refund?"
+      },
+      {
+        "id": "dl-005",
+        "scenarioId": "daily-life-errands",
+        "word": "exchange",
+        "zh": "換貨",
+        "context": "shopping problem",
+        "example": "Can I exchange this item?"
+      },
+      {
+        "id": "dl-006",
+        "scenarioId": "daily-life-errands",
+        "word": "direction",
+        "zh": "方向 / 路線",
+        "context": "finding a place",
+        "example": "Can you give me directions?"
+      },
+      {
+        "id": "dl-007",
+        "scenarioId": "daily-life-errands",
+        "word": "entrance",
+        "zh": "入口",
+        "context": "building access",
+        "example": "Where is the entrance?"
+      },
+      {
+        "id": "dl-008",
+        "scenarioId": "daily-life-errands",
+        "word": "parking",
+        "zh": "停車",
+        "context": "driving",
+        "example": "Is there parking nearby?"
+      },
+      {
+        "id": "dl-009",
+        "scenarioId": "daily-life-errands",
+        "word": "available",
+        "zh": "有空 / 可用",
+        "context": "time",
+        "example": "Are you available tomorrow?"
+      },
+      {
+        "id": "dl-010",
+        "scenarioId": "daily-life-errands",
+        "word": "confirm",
+        "zh": "確認",
+        "context": "messages",
+        "example": "Please confirm the time."
+      },
+      {
+        "id": "dl-011",
+        "scenarioId": "daily-life-errands",
+        "word": "details",
+        "zh": "細節",
+        "context": "messages",
+        "example": "Can you text me the details?"
+      },
+      {
+        "id": "dl-012",
+        "scenarioId": "daily-life-errands",
+        "word": "nearby",
+        "zh": "附近",
+        "context": "location",
+        "example": "Is there a supermarket nearby?"
+      },
+      {
+        "id": "dl-013",
+        "scenarioId": "daily-life-errands",
+        "word": "urgent",
+        "zh": "緊急的",
+        "context": "problems",
+        "example": "This is urgent."
+      },
+      {
+        "id": "dl-014",
+        "scenarioId": "daily-life-errands",
+        "word": "available time",
+        "zh": "可用時間 / 有空時間",
+        "context": "booking",
+        "example": "What is your available time?"
+      },
+      {
+        "id": "dl-015",
+        "scenarioId": "daily-life-errands",
+        "word": "bring",
+        "zh": "帶來",
+        "context": "preparation",
+        "example": "Please bring your ID."
+      }
+    ],
+    "sentences": [
+      {
+        "id": "dl-s1",
+        "scenarioId": "daily-life-errands",
+        "en": "I have an appointment at 3 pm.",
+        "zh": "我下午三點有預約。"
+      },
+      {
+        "id": "dl-s2",
+        "scenarioId": "daily-life-errands",
+        "en": "Can you send me the address?",
+        "zh": "你可以把地址傳給我嗎？"
+      },
+      {
+        "id": "dl-s3",
+        "scenarioId": "daily-life-errands",
+        "en": "Is there parking nearby?",
+        "zh": "附近有停車位嗎？"
+      },
+      {
+        "id": "dl-s4",
+        "scenarioId": "daily-life-errands",
+        "en": "Can I get a receipt, please?",
+        "zh": "可以給我收據嗎？"
+      },
+      {
+        "id": "dl-s5",
+        "scenarioId": "daily-life-errands",
+        "en": "I need to reschedule my appointment.",
+        "zh": "我需要改預約時間。"
+      },
+      {
+        "id": "dl-s6",
+        "scenarioId": "daily-life-errands",
+        "en": "Please text me the details.",
+        "zh": "請把細節傳訊息給我。"
+      },
+      {
+        "id": "dl-s7",
+        "scenarioId": "daily-life-errands",
+        "en": "I am not available this afternoon.",
+        "zh": "我今天下午沒有空。"
+      },
+      {
+        "id": "dl-s8",
+        "scenarioId": "daily-life-errands",
+        "en": "I will confirm it later today.",
+        "zh": "我今天晚一點會確認。"
+      }
+    ],
+    "dialogue": {
+      "id": "dl-d1",
+      "scenarioId": "daily-life-errands",
+      "title": "Changing an appointment time",
+      "lines": [
+        {
+          "speaker": "you",
+          "en": "Hi, I need to reschedule my appointment.",
+          "zhHint": "你說需要改預約時間"
+        },
+        {
+          "speaker": "customer",
+          "en": "No problem. What time works for you?",
+          "zhHint": "對方問你什麼時間方便"
+        },
+        {
+          "speaker": "you",
+          "en": "Tomorrow morning works better for me.",
+          "zhHint": "你回答明天早上比較方便"
+        },
+        {
+          "speaker": "customer",
+          "en": "Okay, I will confirm the new time by text.",
+          "zhHint": "對方說會用簡訊確認新時間"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "id": "dl-q1",
+        "scenarioId": "daily-life-errands",
+        "type": "mc",
+        "question": "\"Appointment\" means:",
+        "options": [
+          "收據",
+          "預約",
+          "入口"
+        ],
+        "answer": "預約"
+      },
+      {
+        "id": "dl-q2",
+        "scenarioId": "daily-life-errands",
+        "type": "mc",
+        "question": "Can you send me the ___?",
+        "options": [
+          "address",
+          "refund",
+          "entrance"
+        ],
+        "answer": "address"
+      },
+      {
+        "id": "dl-q3",
+        "scenarioId": "daily-life-errands",
+        "type": "translate",
+        "question": "翻譯成英文：我需要改預約時間。",
+        "answer": "I need to reschedule my appointment."
+      }
+    ]
   }
 ]

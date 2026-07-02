@@ -284,5 +284,186 @@
         "zh": "我這週在測試一個新功能。"
       }
     ]
+  },
+  {
+    "id": "daily-life",
+    "name": "Daily Life",
+    "nameZh": "日常生活",
+    "phrases": [
+      {
+        "id": "ph-dl1",
+        "en": "I am on my way.",
+        "zh": "我在路上了。"
+      },
+      {
+        "id": "ph-dl2",
+        "en": "I will be there soon.",
+        "zh": "我很快就到。"
+      },
+      {
+        "id": "ph-dl3",
+        "en": "Can I have a bag, please?",
+        "zh": "可以給我一個袋子嗎？"
+      },
+      {
+        "id": "ph-dl4",
+        "en": "Can I pay by card?",
+        "zh": "我可以刷卡嗎？"
+      },
+      {
+        "id": "ph-dl5",
+        "en": "Where is the nearest toilet?",
+        "zh": "最近的廁所在哪裡？"
+      },
+      {
+        "id": "ph-dl6",
+        "en": "Could you help me with this?",
+        "zh": "你可以幫我一下嗎？"
+      },
+      {
+        "id": "ph-dl7",
+        "en": "I am looking for this address.",
+        "zh": "我在找這個地址。"
+      },
+      {
+        "id": "ph-dl8",
+        "en": "Is this the right way?",
+        "zh": "這條路是對的嗎？"
+      },
+      {
+        "id": "ph-dl9",
+        "en": "I need to buy some groceries.",
+        "zh": "我需要買一些日用品/食材。"
+      },
+      {
+        "id": "ph-dl10",
+        "en": "I forgot to bring it.",
+        "zh": "我忘記帶了。"
+      },
+      {
+        "id": "ph-dl11",
+        "en": "Can you text me the details?",
+        "zh": "你可以把細節傳訊息給我嗎？"
+      },
+      {
+        "id": "ph-dl12",
+        "en": "I will check and let you know.",
+        "zh": "我確認後再跟你說。"
+      }
+    ]
+  },
+  {
+    "id": "customer-talk",
+    "name": "Customer Talk",
+    "nameZh": "客戶溝通",
+    "phrases": [
+      {
+        "id": "ph-ct1",
+        "en": "Thanks for sending the photos.",
+        "zh": "謝謝你傳照片給我。"
+      },
+      {
+        "id": "ph-ct2",
+        "en": "I need to check it in person.",
+        "zh": "我需要現場看一下。"
+      },
+      {
+        "id": "ph-ct3",
+        "en": "Can you send me your address?",
+        "zh": "你可以把地址傳給我嗎？"
+      },
+      {
+        "id": "ph-ct4",
+        "en": "Can you send me a few more photos?",
+        "zh": "你可以再傳幾張照片給我嗎？"
+      },
+      {
+        "id": "ph-ct5",
+        "en": "I will confirm the price before I start.",
+        "zh": "開始前我會先確認價格。"
+      },
+      {
+        "id": "ph-ct6",
+        "en": "This may take longer than expected.",
+        "zh": "這可能會比預期久一點。"
+      },
+      {
+        "id": "ph-ct7",
+        "en": "I need to buy a part for this job.",
+        "zh": "這個工作我需要買一個零件。"
+      },
+      {
+        "id": "ph-ct8",
+        "en": "I can finish it today.",
+        "zh": "我今天可以完成。"
+      },
+      {
+        "id": "ph-ct9",
+        "en": "I may need to come back tomorrow.",
+        "zh": "我可能需要明天再回來。"
+      },
+      {
+        "id": "ph-ct10",
+        "en": "Please let me know if there is any issue.",
+        "zh": "如果有任何問題請跟我說。"
+      }
+    ]
+  },
+  {
+    "id": "problem-solving",
+    "name": "Problem Solving",
+    "nameZh": "處理問題",
+    "phrases": [
+      {
+        "id": "ph-ps1",
+        "en": "There is a small problem.",
+        "zh": "有一個小問題。"
+      },
+      {
+        "id": "ph-ps2",
+        "en": "I found the issue.",
+        "zh": "我找到問題了。"
+      },
+      {
+        "id": "ph-ps3",
+        "en": "The screw is too loose.",
+        "zh": "螺絲太鬆了。"
+      },
+      {
+        "id": "ph-ps4",
+        "en": "The part is damaged.",
+        "zh": "這個零件壞了。"
+      },
+      {
+        "id": "ph-ps5",
+        "en": "This needs to be replaced.",
+        "zh": "這個需要更換。"
+      },
+      {
+        "id": "ph-ps6",
+        "en": "This is not safe to use.",
+        "zh": "這個使用起來不安全。"
+      },
+      {
+        "id": "ph-ps7",
+        "en": "I can fix it temporarily.",
+        "zh": "我可以先暫時修好。"
+      },
+      {
+        "id": "ph-ps8",
+        "en": "The permanent fix will cost more.",
+        "zh": "永久修好會比較貴。"
+      },
+      {
+        "id": "ph-ps9",
+        "en": "Let me explain the options.",
+        "zh": "我跟你說明幾個選項。"
+      },
+      {
+        "id": "ph-ps10",
+        "en": "Which option do you prefer?",
+        "zh": "你比較想選哪一個方案？"
+      }
+    ]
   }
 ]
