@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI 專案總控中心</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="專案總控">
+<meta name="theme-color" content="#1d4e89">
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", sans-serif;
+    background: #f2f4f7;
+    color: #1a1a1a;
+    padding-bottom: calc(24px + env(safe-area-inset-bottom));
+  }
+  header {
+    background: #1d4e89;
+    color: #fff;
+    padding: calc(16px + env(safe-area-inset-top)) 16px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  header h1 { margin: 0; font-size: 1.15rem; }
+  header p { margin: 4px 0 0; font-size: 0.8rem; opacity: 0.85; }
+  .import-link {
+    display: inline-block;
+    margin-top: 10px;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+  }
+  main { padding: 12px; max-width: 640px; margin: 0 auto; }
+  section { margin-bottom: 18px; }
+  section h2 {
+    font-size: 0.95rem;
+    margin: 0 0 8px 4px;
+    color: #444;
+  }
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .card .project { font-size: 0.75rem; color: #888; }
+  .card .task { font-size: 1.02rem; font-weight: 600; margin: 2px 0 6px; }
+  .card .next { font-size: 0.85rem; color: #555; }
+  .card .priority {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 6px;
+    background: #ffe9a8;
+    color: #7a5b00;
+    margin-left: 6px;
+  }
+  .btn-row { display: flex; gap: 8px; margin-top: 10px; }
+  .btn-row button {
+    flex: 1;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .btn-complete { background: #dcf5e3; color: #1c7a3b; }
+  .btn-defer { background: #fdf1d6; color: #916c00; }
+  .btn-blocked { background: #fbdede; color: #a3231f; }
+  .empty { color: #999; font-size: 0.9rem; padding: 4px; }
+  .review-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .stat {
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+  }
+  .stat .num { font-size: 1.4rem; font-weight: 700; }
+  .stat .label { font-size: 0.75rem; color: #777; }
+  #toast {
+    position: fixed;
+    bottom: calc(16px + env(safe-area-inset-bottom));
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a1a1a;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+    max-width: 90vw;
+    text-align: center;
+  }
+  #toast.show { opacity: 0.95; }
+</style>
+</head>
+<body>
+<header>
+  <h1>AI 專案總控中心</h1>
+  <p id="today-label"></p>
+  <a class="import-link" href="import_updates.html">＋ 匯入更新</a>
+</header>
+<main>
+  <section>
+    <h2>今日必做</h2>
+    <div id="today-list"></div>
+  </section>
+  <section>
+    <h2>卡住事項</h2>
+    <div id="blocked-list"></div>
+  </section>
+  <section>
+    <h2>暫停但不可遺忘</h2>
+    <div id="paused-list"></div>
+  </section>
+  <section>
+    <h2>Parking Lot</h2>
+    <div id="parking-list"></div>
+  </section>
+  <section>
+    <h2>本週回顧</h2>
+    <div class="review-stats" id="review-stats"></div>
+  </section>
+</main>
+<div id="toast"></div>
+
+<script>
+const todayLabel = document.getElementById('today-label');
+todayLabel.textContent = new Date().toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' });
+
+function el(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text !== undefined) node.textContent = text;
+  return node;
+}
+
+function renderTaskCard(task, withActions) {
+  const card = el('div', 'card');
+  const project = el('div', 'project', task.project);
+  const taskLine = el('div', 'task');
+  taskLine.textContent = task.task;
+  if (task.priority) {
+    const badge = el('span', 'priority', task.priority);
+    taskLine.appendChild(badge);
+  }
+  card.appendChild(project);
+  card.appendChild(taskLine);
+  if (task.next_action) card.appendChild(el('div', 'next', 'next: ' + task.next_action));
+  if (task.notes) card.appendChild(el('div', 'next', task.notes));
+
+  if (withActions) {
+    const row = el('div', 'btn-row');
+    row.appendChild(makeActionButton('完成', 'btn-complete', task.id, 'complete'));
+    row.appendChild(makeActionButton('延後', 'btn-defer', task.id, 'defer'));
+    row.appendChild(makeActionButton('卡住', 'btn-blocked', task.id, 'blocked'));
+    card.appendChild(row);
+  }
+  return card;
+}
+
+function makeActionButton(label, className, id, action) {
+  const btn = el('button', className, label);
+  btn.type = 'button';
+  btn.addEventListener('click', () => updateTaskStatus(id, action, label));
+  return btn;
+}
+
+function renderList(containerId, tasks, withActions, emptyText) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  if (!tasks.length) {
+    container.appendChild(el('div', 'empty', emptyText));
+    return;
+  }
+  for (const t of tasks) container.appendChild(renderTaskCard(t, withActions));
+}
+
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 1600);
+}
+
+function render(bundle) {
+  renderList('today-list', bundle.todayActive, true, '目前沒有今日必做任務');
+  renderList('blocked-list', bundle.blocked, false, '目前沒有卡住的任務');
+  renderList('paused-list', bundle.paused, false, '目前沒有暫停中的任務');
+  renderList('parking-list', bundle.parking, false, 'Parking Lot 是空的');
+
+  const stats = document.getElementById('review-stats');
+  stats.innerHTML = '';
+  const items = [
+    ['今日必做', bundle.todayActive.length],
+    ['卡住事項', bundle.blocked.length],
+    ['暫停事項', bundle.paused.length],
+    ['過去 7 天完成', bundle.completedRecent.length],
+  ];
+  for (const [label, num] of items) {
+    const stat = el('div', 'stat');
+    stat.appendChild(el('div', 'num', String(num)));
+    stat.appendChild(el('div', 'label', label));
+    stats.appendChild(stat);
+  }
+}
+
+async function loadData() {
+  const res = await fetch('/api/data');
+  const bundle = await res.json();
+  render(bundle);
+}
+
+async function updateTaskStatus(id, action, label) {
+  try {
+    const res = await fetch('/api/task-status', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id, action }),
+    });
+    if (!res.ok) throw new Error((await res.json()).error || '更新失敗');
+    const bundle = await res.json();
+    render(bundle);
+    showToast(`已標記為「${label}」`);
+  } catch (err) {
+    showToast('更新失敗：' + err.message);
+  }
+}
+
+loadData();
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('service-worker.js').catch(() => {});
+  });
+}
+</script>
+</body>
+</html>

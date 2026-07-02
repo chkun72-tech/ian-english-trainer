@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>匯入專案更新</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1d4e89">
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", sans-serif;
+    background: #f2f4f7;
+    color: #1a1a1a;
+    padding-bottom: calc(24px + env(safe-area-inset-bottom));
+  }
+  header {
+    background: #1d4e89;
+    color: #fff;
+    padding: calc(16px + env(safe-area-inset-top)) 16px 16px;
+  }
+  header h1 { margin: 0; font-size: 1.1rem; }
+  .back-link { color: #cfe0f5; font-size: 0.85rem; text-decoration: none; }
+  main { padding: 14px; max-width: 640px; margin: 0 auto; }
+  textarea {
+    width: 100%;
+    min-height: 260px;
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    font-size: 0.85rem;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+  }
+  button.primary {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px 0;
+    border: none;
+    border-radius: 10px;
+    background: #1d4e89;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .hint {
+    background: #fff;
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 14px;
+    font-size: 0.8rem;
+    color: #555;
+    white-space: pre-wrap;
+  }
+  .result {
+    margin-top: 14px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 0.85rem;
+  }
+  .result h3 { margin: 0 0 6px; font-size: 0.85rem; }
+  .result ul { margin: 4px 0 10px; padding-left: 18px; }
+  .result .warn { color: #a3231f; }
+</style>
+</head>
+<body>
+<header>
+  <h1>匯入更新</h1>
+  <a class="back-link" href="dashboard.html">&larr; 回到 Dashboard</a>
+</header>
+<main>
+  <p>把 ChatGPT / Cloud Code / Codex / Manus / 你自己 的 PROJECT_UPDATE 內容整段貼進來，可以一次貼多個區塊。</p>
+  <textarea id="paste-area" placeholder="PROJECT_UPDATE
+project: 專案名稱
+task: 任務名稱
+status: active
+priority: A
+next_action: 下一步
+source: ChatGPT
+date: 2026-07-02
+notes: 備註
+END_PROJECT_UPDATE"></textarea>
+  <button class="primary" id="import-btn" type="button">貼入並匯入</button>
+
+  <div class="result" id="result" style="display:none;"></div>
+
+  <div class="hint">格式範例：
+PROJECT_UPDATE
+project: 專案名稱
+task: 任務名稱
+status: active / completed / blocked / paused / parking
+priority: A / B / C
+next_action: 下一步
+source: ChatGPT / Cloud Code / Codex / Manus / User
+date: YYYY-MM-DD
+notes: 備註
+END_PROJECT_UPDATE
+
+詳細規則請看 PROJECT-UPDATE-FORMAT.md</div>
+</main>
+
+<script>
+function el(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text !== undefined) node.textContent = text;
+  return node;
+}
+
+function renderList(title, items) {
+  if (!items.length) return null;
+  const wrap = document.createElement('div');
+  wrap.appendChild(el('h3', null, title));
+  const ul = document.createElement('ul');
+  for (const item of items) ul.appendChild(el('li', null, item));
+  wrap.appendChild(ul);
+  return wrap;
+}
+
+document.getElementById('import-btn').addEventListener('click', async () => {
+  const text = document.getElementById('paste-area').value;
+  const resultBox = document.getElementById('result');
+  resultBox.style.display = 'block';
+  resultBox.innerHTML = '匯入中...';
+
+  try {
+    const res = await fetch('/api/import', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || '匯入失敗');
+
+    resultBox.innerHTML = '';
+    const { summary, errors } = data;
+    const blocks = [
+      renderList('新增專案', summary.projectsAdded),
+      renderList('新增任務', summary.tasksAdded),
+      renderList('更新任務', summary.tasksUpdated),
+    ].filter(Boolean);
+
+    if (blocks.length === 0 && errors.length === 0) {
+      resultBox.appendChild(el('p', null, '沒有偵測到任何有效的 PROJECT_UPDATE 區塊。'));
+    }
+    for (const b of blocks) resultBox.appendChild(b);
+
+    if (errors.length) {
+      const warnWrap = document.createElement('div');
+      warnWrap.appendChild(el('h3', 'warn', '警告'));
+      const ul = document.createElement('ul');
+      for (const e of errors) ul.appendChild(el('li', 'warn', e));
+      warnWrap.appendChild(ul);
+      resultBox.appendChild(warnWrap);
+    }
+
+    resultBox.appendChild(el('p', null, '已重新產生 daily_checklist.md 與 weekly_review.md。'));
+  } catch (err) {
+    resultBox.innerHTML = '';
+    resultBox.appendChild(el('p', 'warn', '匯入失敗：' + err.message));
+  }
+});
+</script>
+</body>
+</html>
