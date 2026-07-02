@@ -1,7 +1,9 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Copy, Mic, RotateCcw, Snail, Square, Volume2 } from "lucide-react";
+
+let cachedVoices: SpeechSynthesisVoice[] = [];
 
 function wordsFrom(text: string) {
   return text
@@ -39,6 +41,22 @@ function getSpeechRecognition() {
     webkitSpeechRecognition?: new () => SpeechRecognition;
   };
   return browserWindow.SpeechRecognition || browserWindow.webkitSpeechRecognition || null;
+}
+
+function pickVoice() {
+  if (typeof window === "undefined" || !window.speechSynthesis) return null;
+
+  const voices = window.speechSynthesis.getVoices();
+  if (voices.length > 0) cachedVoices = voices;
+
+  const pool = cachedVoices.length > 0 ? cachedVoices : voices;
+  return (
+    pool.find((voice) => voice.lang === "en-AU") ||
+    pool.find((voice) => voice.lang === "en-GB") ||
+    pool.find((voice) => voice.lang === "en-US" && voice.localService) ||
+    pool.find((voice) => voice.lang.startsWith("en")) ||
+    null
+  );
 }
 
 interface SpeechRecognition extends EventTarget {
@@ -85,6 +103,21 @@ export default function SpeechTools({
     : "border-line bg-white text-ink active:bg-paper";
   const mutedText = inverted ? "text-white/70" : "text-ink/50";
 
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.speechSynthesis) return;
+
+    const loadVoices = () => {
+      cachedVoices = window.speechSynthesis.getVoices();
+    };
+
+    loadVoices();
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+
+    return () => {
+      window.speechSynthesis.onvoiceschanged = null;
+    };
+  }, []);
+
   function speak(times = 1, rate = 0.82) {
     if (typeof window === "undefined" || !window.speechSynthesis) return;
     window.speechSynthesis.cancel();
@@ -92,18 +125,45 @@ export default function SpeechTools({
     let spoken = 0;
     const playNext = () => {
       if (spoken >= times) return;
+
       const utterance = new SpeechSynthesisUtterance(text);
+      const voice = pickVoice();
+      let keepAlive: number | null = null;
+
       utterance.lang = "en-AU";
       utterance.rate = rate;
       utterance.pitch = 1;
+      utterance.volume = 1;
+      if (voice) utterance.voice = voice;
+
+      const clearKeepAlive = () => {
+        if (keepAlive !== null) {
+          window.clearInterval(keepAlive);
+          keepAlive = null;
+        }
+      };
+
       spoken += 1;
+      utterance.onstart = () => {
+        keepAlive = window.setInterval(() => {
+          if (!window.speechSynthesis.speaking) {
+            clearKeepAlive();
+            return;
+          }
+          window.speechSynthesis.pause();
+          window.speechSynthesis.resume();
+        }, 5000);
+      };
       utterance.onend = () => {
+        clearKeepAlive();
         if (spoken < times) window.setTimeout(playNext, 650);
       };
+      utterance.onerror = clearKeepAlive;
+
       window.speechSynthesis.speak(utterance);
     };
 
-    playNext();
+    window.setTimeout(playNext, 150);
   }
 
   async function copyText() {
@@ -201,11 +261,15 @@ export default function SpeechTools({
         <div className={`mt-2 rounded-lg px-3 py-2 text-xs ${inverted ? "bg-white/10 text-white" : "bg-paper text-ink"}`}>
           <div className="flex items-center justify-between gap-2">
             <p className="font-semibold">我聽到：{heard}</p>
-            <span className={`rounded-full px-2 py-0.5 font-bold ${feedback.score >= 80 ? "bg-green-100 text-green-700" : "bg-amber-100 text-amber-700"}`}>
+            <span
+              className={`rounded-full px-2 py-0.5 font-bold ${
+                feedback.score >= 80 ? "bg-green-100 text-green-700" : "bg-amber-100 text-amber-700"
+              }`}
+            >
               {feedback.score}%
             </span>
           </div>
-          <p className={`mt-1 ${mutedText}`}>糾正建議：{feedbackLabel(feedback.score)}</p>
+          <p className={`mt-1 ${mutedText}`}>修正建議：{feedbackLabel(feedback.score)}</p>
 
           <div className="mt-2 flex flex-wrap gap-1.5">
             {feedback.targetWords.map((word, index) => {
